@@ -1,2 +1,24 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script>
+  import {Button} from "$lib";
+  import {page} from '$app/stores';
+
+  $effect(() => {
+    if ($page.url.pathname) {
+      console.log('effect', $page.url);
+    }
+  })
+</script>
+
+<p>
+  <a href="/">Home</a>
+  <Button url="/test/page1">Shallow 1</Button>
+  <Button url="/test/page2">Shallow 2</Button>
+  <Button url="/test/page3">Shallow 3</Button>
+</p>
+
+<style>
+  p {
+    display: flex;
+    gap: 1em;
+  }
+</style>
