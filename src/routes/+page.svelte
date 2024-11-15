@@ -3,9 +3,7 @@
   import {page} from '$app/stores';
 
   $effect(() => {
-    if ($page.url.pathname) {
-      console.log('effect', $page.url);
-    }
+    console.log('effect', $page.url.pathname);
   })
 </script>
 
